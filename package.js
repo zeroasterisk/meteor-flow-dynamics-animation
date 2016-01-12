@@ -13,8 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
-  api.imply('zeroasterisk:dynamicsjs');
-  //api.use('zeroasterisk:dynamicsjs@0.0.1');
+  api.imply('zeroasterisk:dynamicsjs@0.0.1');
   api.addFiles('flow-dynamics-animation.js');
   api.export('FlowDynamicsAnimation');
   api.export('FlowDA');
