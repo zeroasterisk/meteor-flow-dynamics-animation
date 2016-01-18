@@ -111,7 +111,7 @@ FlowDynamicsAnimation = {
             oldDom,
             FlowDynamicsAnimation.conf().modOutTo,
             _.extend(
-              { complete: function() { $(oldDom).html(""); } },
+              { complete: function() { $(oldDom).html("").css({height:0,width:0}); } },
               FlowDynamicsAnimation.conf().movement
             )
           );
