@@ -1,5 +1,5 @@
 FlowDynamicsAnimation = {
-  currentName: "default",
+  currentName: 'default',
   config: {},
   start: function(name) {
     if (name && _.isString(name)) {
@@ -27,8 +27,8 @@ FlowDynamicsAnimation = {
   // confDefault - standardized, after render, so we can rely on dynamics object
   confDefault: function() {
     return {
-      layout: "MainLayout",
-      contentSelector: "#MainContent",
+      layout: 'MainLayout',
+      contentSelector: '#MainContent',
       modCurrent: {
         opacity: 1,
         translateX: 0,
@@ -72,8 +72,12 @@ FlowDynamicsAnimation = {
   },
   ani: function() {
     if (!this.vet()) {
-      console.error("FlowDynamicsAnimation can not animate, " +
-                    "unable to vet existence of animation wrapper");
+      /*
+      console.error(
+        'FlowDynamicsAnimation can not animate, ' +
+        'unable to vet existence of animation wrapper'
+      );
+      */
       return;
     }
     this.aniSetup();
@@ -82,18 +86,18 @@ FlowDynamicsAnimation = {
   },
   aniSetup: function() {
     var content = $(this.conf().contentSelector);
-    var contentClone = $("<div class='flow-dynamics-animation-clone'></div>");
+    var contentClone = $('<div class="flow-dynamics-animation-clone"></div>');
     $(content).after(
       $(contentClone)
       .css({
-        position: "absolute",
+        position: 'absolute',
         height: $(content).height(),
         width: $(content).width(),
         left: $(content).position().left,
         top: $(content).position().top
       })
       .html(
-        $(content).clone(false).removeAttr("id").removeAttr("style")
+        $(content).clone(false).removeAttr('id').removeAttr('style')
       )
     );
     this.config[this.currentName].contentClone = contentClone;
@@ -111,7 +115,7 @@ FlowDynamicsAnimation = {
             oldDom,
             FlowDynamicsAnimation.conf().modOutTo,
             _.extend(
-              { complete: function() { $(oldDom).html("").css({height:0,width:0}); } },
+              { complete: function() { $(oldDom).html('').css({height:0,width:0}); } },
               FlowDynamicsAnimation.conf().movement
             )
           );
